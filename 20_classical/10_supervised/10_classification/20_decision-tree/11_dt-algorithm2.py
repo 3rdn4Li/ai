@@ -1,9 +1,5 @@
-#!/usr/bin/python
-# coding:utf-8
-
 import operator
 from math import log
-import decisionTreePlot as dtPlot
 from collections import Counter
 
 
@@ -171,7 +167,7 @@ def classify(inputTree, featLabels, testVec):
         classLabel 分类的结果值，需要映射label才能知道名称
     """
     # 获取tree的根节点对于的key值
-    firstStr = inputTree.keys()[0]
+    firstStr = list(inputTree.keys())[0]
     # 通过key得到根节点对应的value
     secondDict = inputTree[firstStr]
     # 判断根节点名称获取根节点在label中的先后顺序，这样就知道输入的testVec怎么开始对照树来做分类
@@ -195,9 +191,6 @@ if __name__ == "__main__":
     import copy
     myTree = createTree(myDat, copy.deepcopy(labels))
     print(myTree)
-
-    # 画图可视化展现
-    dtPlot.createPlot(myTree)
 
     # no surfacing and flippers is a fish
     print(classify(myTree, labels, [1, 1]))

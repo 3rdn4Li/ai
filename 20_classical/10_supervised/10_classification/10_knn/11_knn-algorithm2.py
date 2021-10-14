@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
 from numpy import array, sum
 from collections import Counter
 
